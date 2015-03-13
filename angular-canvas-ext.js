@@ -433,7 +433,6 @@ canvasExtModule.directive('apCanvas', function (apImageHelper) {
       $scope.$watch(function () {
         return $scope.src;
       }, function (newSrc) {
-        console.log('new src ' + newSrc);
         if (newSrc) {
           loadImage();
         } else {
@@ -451,7 +450,6 @@ canvasExtModule.directive('apCanvas', function (apImageHelper) {
       $scope.$watch(function () {
         return $scope.image;
       }, function (newImage, oldImage) {
-        console.log('new image ' + newImage);
         canvas.width = canvas.width;
         if (newImage) {
           updateDefaultScale();
@@ -615,7 +613,6 @@ canvasExtModule.directive('apCanvas', function (apImageHelper) {
     },
     link: function ($scope, element, attrs) {
       var updateImageSrc = function (src) {
-        console.log('new src ' + src);
         $scope.src = src;
         $scope.$apply();
         if ($scope.onImageReady) {
@@ -623,7 +620,6 @@ canvasExtModule.directive('apCanvas', function (apImageHelper) {
         }
       };
       element.bind('change', function (e) {
-        console.log('file changed');
         if ($scope.onImageSelected) {
           $scope.onImageSelected();
         }
